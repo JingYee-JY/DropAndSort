@@ -23,7 +23,7 @@ let scoreinterval
 let timeinterval
 
 let startGame = false;
-let player = {step: 2}
+let player = {step: 3}
 let time;
 let right;
 let score;
@@ -31,20 +31,20 @@ let score;
 var objects = [ "aluminium", "bamboo","brick", "concrete", "cork", "lead", "paper","plastic","steel", "steel1", "wood"]
 
 var nonSustainable = [
-    {image: "./img/concrete.png",info:"Concrete is not a sustainable building material. The cement industry is one of the largest producers of carbon dioxide, nitrogen oxide, sulphur oxide, and carbon monoxide, which all cause harmful effects to humans and the environment with large amounts."},
-    {image: "./img/lead.png", info:"Lead is not a sustainable building material. Exposure and improper waste management can result in serious health problems and harms the growth and reproduction in plants and animals."},
+    {image: "./img/concrete.png",info:"Steel is not sustainable. Steel production and waste contribute large amounts of greenhouse gases into water and air. Recycled steel is more sustainable as lesser energy is used to produce it."},
+    {image: "./img/lead.png", info:"Lead is not sustainable. Exposure to lead and improper lead waste management can result in serious health problems and harm the growth and reproduction of plants and animals."},
     {image: "./img/steel1.png", info:"Steel is not a sustainable building material. Steel production and waste contributes large amounts of greenhouse gases in water and air. Recycled steel is more sustainable as lesser energy is used to produce new materials."}
 ]
 
 var sustainable = [
-    {image: "./img/aluminium.png", info:"Recycled Aluminium is a sustainable building material being infinitely recyclable, lightweight and strong. Rather than creating new materials, recycled materials help to reduce energy and carbon emissions."},
-    {image: "./img/bamboo.png", info:"Bamboo is a sustainable building material that is renewable, offering great flexibility, rigidity and strength as an alternative construction material."},
-    {image: "./img/brick.png", info:"Reclaimed bricks are a sustainable building material that help to reduce emissions, landfill waste, and needless production of new materials."},
-    {image: "./img/cork.png", info:"Cork is a sustainable building material which is sustainably harvested, naturally biodegradable, and offsets carbon dioxide emissions with oxygen production."},
-    {image: "./img/paper.png", info:"Paper insulation is a sustainable building material composed of up to 85% recycled materials and uses less energy than other insulation products "},
+    {image: "./img/aluminium.png", info:"Recycled aluminium is infinitely recyclable, lightweight and strong. Recycled materials help to reduce energy and carbon emissions."},
+    {image: "./img/bamboo.png", info:"Bamboo is renewable, offering great flexibility, rigidity and strength as an alternative construction material."},
+    {image: "./img/brick.png", info:"Reclaimed bricks help to reduce emissions, landfill waste and needless production of new materials."},
+    {image: "./img/cork.png", info:"Cork is sustainably harvested, naturally biodegradable  and offsets carbon dioxide emissions with oxygen production."},
+    {image: "./img/paper.png", info:"Paper insulation is composed of up to 85% recycled materials and uses less energy than other insulation products.  "},
     {image: "./img/plastic.png", info:"The same piece of plastic can only be recycled about 2-3 times before its quality decreases to the point where it can no longer be used."},
-    {image: "./img/steel.png", info:"Recycled steel is a sustainable building material helping to eliminate large amounts of energy and waste using up to 75% less energy to create new steel."},
-    {image: "./img/wood.png", info:"Wood is a sustainable building material being completely renewable and biodegradable, with large adaptability in production and recyclability"}
+    {image: "./img/steel.png", info:"It takes up to 75% less energy to produce recycled steel compared with new steel. The use of recycled steel helps reduce the amount of energy and waste in steel production."},
+    {image: "./img/wood.png", info:"Wood is completely renewable and biodegradable, with large adaptability in production and recyclability."}
 ]
 
 startButton.addEventListener("click", () => {
@@ -164,7 +164,7 @@ function moveObject(){
     let spwanTime = border.height / 4
 
     function spawnItem(item){
-        if(item.y >= spwanTime && item.y < (spwanTime + 1.5)){
+        if(item.y >= spwanTime && item.y < (spwanTime + 3)){
             spawnObject();
         }
         if(item.classList.contains("move")){
@@ -229,7 +229,7 @@ function moveObject(){
         if(item.y > (border.height - 150) && item.y < border.height && 
         item.x > 0 && item.x < 100){
             if(!item.classList.contains("wrong")){
-                score += 2
+                score += 1
                 gameContainer.removeChild(item);
                 return
             }

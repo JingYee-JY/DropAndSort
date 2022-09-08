@@ -22,8 +22,11 @@ let border
 let scoreinterval
 let timeinterval
 
+let movingRight
+let movingLeft
+let spawnOnce
 let startGame = false;
-let player = {step: 3}
+let player = {step: 2, right:9}
 let time;
 let right;
 let score;
@@ -75,6 +78,9 @@ function began(){
     startGame = true
     score = 0
     time = 60
+    movingLeft = false
+    movingRight = false
+    spawnOnce = false
     timerCount.innerHTML = `${time}s`;
     scoreinterval =  setInterval(updateScore, 1)
     timeinterval = setInterval(updateCountDown, 1000)
@@ -92,7 +98,13 @@ function spawnObject(){
     object.classList.add(objects[index])
     object.y = 0;
     object.style.top = object.y + 'px';
-    object.x = Math.floor(Math.random() * ((border.width - 130) - 150)) + 150
+    let random = Math.floor(Math.random() * 2)
+    if(random == 0){
+        object.x = 0
+    }
+    else{
+        object.x = border.width - 200
+    }
     object.style.left = object.x + 'px';
     gameContainer.appendChild(object);
     function noMark(){
@@ -164,20 +176,40 @@ function moveObject(){
     let spwanTime = border.height / 4
 
     function spawnItem(item){
-        if(item.y >= spwanTime && item.y < (spwanTime + 3)){
+
+        if(item.y >= spwanTime && item.y < (spwanTime + 3) && spawnOnce == false){
             spawnObject();
+            spawnOnce = true
+        }
+        if(item.y >= (spwanTime + 3) && item.y < (spwanTime + 6)){
+            spawnOnce = false
         }
         if(item.classList.contains("move")){
-            if(item.y >(border.height - 250)){
-                if(item.x < 130 && item.x > 100){
+            if(item.x > 40 && movingLeft == false && movingRight == false){
+                movingLeft = true
+            }
+            if(item.x < 40 && movingLeft == false && movingRight == false){
+                movingRight = true
+            }
+
+            if(movingLeft == true){
+                item.x = item.x - player.right;
+                item.style.left = item.x +"px";
+                if(item.x < 20){
                     item.classList.remove("move")
+                    movingLeft = false
                 }
+                return
             }
-            if(item.x < 10){
-                item.classList.remove("move")
+            if(movingRight == true){
+                item.x = item.x + player.right;
+                item.style.left = item.x +"px";
+                if(item.x > border.width - 200){
+                    item.classList.remove("move")
+                    movingRight = false
+                }
+                return
             }
-            item.x = item.x - player.step;
-            item.style.left = item.x +"px";
         }
         if(item.y > border.height){
             if(!item.classList.contains("wrong")){
@@ -226,8 +258,8 @@ function moveObject(){
             }
             gameContainer.removeChild(item);
         }
-        if(item.y > (border.height - 150) && item.y < border.height && 
-        item.x > 0 && item.x < 100){
+        if(item.y > (border.height - 150) && item.y < (border.height - 100) && 
+        item.x > -5 && item.x < 100){
             if(!item.classList.contains("wrong")){
                 score += 1
                 gameContainer.removeChild(item);

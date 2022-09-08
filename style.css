@@ -190,7 +190,7 @@ hr{
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 0px;
+    bottom: -15px;
     left: -25px;
 }
 

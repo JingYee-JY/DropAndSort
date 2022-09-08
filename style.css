@@ -603,7 +603,7 @@ hr{
         margin: 0 auto;
     }
     .game{
-        max-width: 800px;
+        max-width: 760px;
     }
     .start,.game,.final{
       left: 0;
@@ -626,7 +626,7 @@ hr{
         height: 300px;
     }
     .bin2{
-        left: calc(100% - 300px);
+        left: calc(100% - 290px);
         width: 300px;
         height: 300px;
     }

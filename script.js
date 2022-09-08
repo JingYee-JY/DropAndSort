@@ -104,7 +104,7 @@ function spawnObject(){
         object.x = 25
     }
     else{
-        object.x = border.width - 150
+        object.x = border.width - 180
     }
     object.style.left = object.x + 'px';
     gameContainer.appendChild(object);
@@ -215,7 +215,7 @@ function moveObject(){
                 return
             }
         }
-        if(item.y > border.height){
+        if(item.y > (border.height - 160) &&  item.x > 150){
             if(!item.classList.contains("wrong")){
                 startGame = false
                 if(item.classList.contains("aluminium")){
@@ -262,8 +262,7 @@ function moveObject(){
             }
             gameContainer.removeChild(item);
         }
-        if(item.y > (border.height - 150) && item.y < (border.height - 100) && 
-        item.x > -5 && item.x < 100){
+        if(item.y > (border.height - 150) && item.y < (border.height - 100) &&  item.x < 150){
             if(!item.classList.contains("wrong")){
                 score += 1
                 gameContainer.removeChild(item);

@@ -401,6 +401,7 @@ hr{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 5%;
 }
@@ -408,7 +409,7 @@ hr{
 .information{
     width: 80%;
     position: relative;
-    height: 70%;
+    height: 90%;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -416,8 +417,8 @@ hr{
 }
 
 .information img{
-    margin-top: 2.5%;
-    width: 50%;
+    margin-top: 5%;
+    width: 60%;
 }
 
 .information h1{
@@ -612,8 +613,8 @@ hr{
     }
     .preview{
         margin-top: 20%;
-        margin-left: -25%;
-        width: 150%;
+        margin-left: -10%;
+        width: 125%;
     }
     .words{
       width: 90%;
@@ -641,6 +642,14 @@ hr{
     .text img{
         top: 5%;
         max-width: 80px;
+    }
+    .information img{
+        max-width: 170px;
+    }
+    .information p {
+        width: 400px;
+        height: 300px;
+        font-size: 20px;
     }
 }
 
@@ -686,13 +695,7 @@ hr{
         max-width: 130px;
     }
     .information p{
-        font-size: 13px;
-    }
-    .information h1{
-        font-weight: 900;
-        font-size: 15px;
-        margin: 2.5% auto;
-        margin: 0%;
+        font-size: 30px;
     }
     .startButton, .startGame{
         max-width: 250px;

@@ -37,14 +37,14 @@ var nonSustainable = [
 ]
 
 var sustainable = [
-    {image: "./img/aluminium.png", info:"Al"},
-    {image: "./img/bamboo.png", info:"ba"},
-    {image: "./img/brick.png", info:"br"},
-    {image: "./img/cork.png", info:"br"},
-    {image: "./img/paper.png", info:"pa"},
-    {image: "./img/plastic.png", info:"pl"},
-    {image: "./img/steel.png", info:"st"},
-    {image: "./img/wood.png", info:"wo"}
+    {image: "./img/aluminium.png", info:"Recycled Aluminium is a sustainable building material being infinitely recyclable, lightweight and strong. Rather than creating new materials, recycled materials help to reduce energy and carbon emissions."},
+    {image: "./img/bamboo.png", info:"Bamboo is a sustainable building material that is renewable, offering great flexibility, rigidity and strength as an alternative construction material."},
+    {image: "./img/brick.png", info:"Reclaimed bricks are a sustainable building material that help to reduce emissions, landfill waste, and needless production of new materials."},
+    {image: "./img/cork.png", info:"Cork is a sustainable building material which is sustainably harvested, naturally biodegradable, and offsets carbon dioxide emissions with oxygen production."},
+    {image: "./img/paper.png", info:"Paper insulation is a sustainable building material composed of up to 85% recycled materials and uses less energy than other insulation products "},
+    {image: "./img/plastic.png", info:"The same piece of plastic can only be recycled about 2-3 times before its quality decreases to the point where it can no longer be used."},
+    {image: "./img/steel.png", info:"Recycled steel is a sustainable building material helping to eliminate large amounts of energy and waste using up to 75% less energy to create new steel."},
+    {image: "./img/wood.png", info:"Wood is a sustainable building material being completely renewable and biodegradable, with large adaptability in production and recyclability"}
 ]
 
 startButton.addEventListener("click", () => {
@@ -185,49 +185,41 @@ function moveObject(){
                 if(item.classList.contains("aluminium")){
                     information.innerHTML =`
                     <img src="${sustainable[0].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[0].info}</p>`
                 }
                 if(item.classList.contains("bamboo")){
                     information.innerHTML =`
                     <img src="${sustainable[1].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[1].info}</p>`
                 }
                 if(item.classList.contains("brick")){
                     information.innerHTML =`
                     <img src="${sustainable[2].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[2].info}</p>`
                 }
                 if(item.classList.contains("cork")){
                     information.innerHTML =`
                     <img src="${sustainable[3].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[3].info}</p>`
                 }
                 if(item.classList.contains("paper")){
                     information.innerHTML =`
                     <img src="${sustainable[4].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[4].info}</p>`
                 }
                 if(item.classList.contains("plastic")){
                     information.innerHTML =`
                     <img src="${sustainable[5].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[5].info}</p>`
                 }
                 if(item.classList.contains("steel")){
                     information.innerHTML =`
                     <img src="${sustainable[6].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[6].info}</p>`
                 }
                 if(item.classList.contains("wood")){
                     information.innerHTML =`
                     <img src="${sustainable[7].image}">
-                    <h1>Good Try!</h1>
                     <p>${sustainable[7].info}</p>`
                 }
                 popUp.classList.remove("hide")
@@ -246,19 +238,16 @@ function moveObject(){
                 if(item.classList.contains("concrete")){
                     information.innerHTML =`
                     <img src="${nonSustainable[0].image}">
-                    <h1>Good Try!</h1>
                     <p>${nonSustainable[0].info}</p>`
                 }
                 if(item.classList.contains("lead")){
                     information.innerHTML =`
                     <img src="${nonSustainable[1].image}">
-                    <h1>Good Try!</h1>
                     <p>${nonSustainable[1].info}</p>`
                 }
                 if(item.classList.contains("steel1")){
                     information.innerHTML =`
                     <img src="${nonSustainable[2].image}">
-                    <h1>Good Try!</h1>
                     <p>${nonSustainable[2].info}</p>`
                 }
                 popUp.classList.remove("hide")

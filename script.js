@@ -185,6 +185,9 @@ function moveObject(){
             spawnOnce = false
         }
         if(item.classList.contains("move")){
+            if(item.y > (border.height - 200)){
+                item.classList.remove("move")
+            }
             if(item.x > 40 && movingLeft == false && movingRight == false){
                 movingLeft = true
             }

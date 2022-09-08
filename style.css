@@ -441,6 +441,7 @@ hr{
     position: absolute;
     top: 5%;
     right: 5%;
+    z-index: 3;
     font-size: 30px;
     padding: 0% 2.7%;
     background-color: red;
@@ -698,7 +699,7 @@ hr{
         max-width: 130px;
     }
     .information p{
-        font-size: 15px;
+        font-size: 14px;
     }
     .startButton, .startGame{
         max-width: 250px;

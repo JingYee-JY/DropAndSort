@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop And Sort</title>
+    <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="start">
+        <div class="game-title">
+            <img class="title" src="./img/title.png">
+        </div>
+        <img class="preview" src="./img/preview.png">
+        <button class="startButton">
+            <p class>START GAME <img src="./img/arrow.png" class="arrowHead"></p>
+        </button>
+    </div>
+    <div class="howToPlay hide">
+        <h1>HOW TO PLAY<hr></h1>
+            <div class="instruction">
+            <p>Sustainable and non-sustainable materials  falls from the sky.</p>
+            <p>Catch all the Sustainable materials and don't let them fall to ground.</p>
+            <p>Be careful not to catch non-sustainable materials. Let non-sustainable materials fall to ground.</p>   
+            <div class="example">
+                        <div class="object">
+                            <img src="./img/wood.png">
+                            <img class="small" src="./img/tick.png">
+                        </div>
+                        <div class="object">
+                            <img src="./img/steel1.png">
+                            <img class="small" src="./img/cross.png">
+                        </div>
+                </div>
+                <div class="help">
+                    <p>Sustainable materials are green mark approved as shown below</p>
+                    <img src="./img/logo.png">
+                </div>
+            </div>
+            <button class="startGame"> 
+                <p class>START GAME <img src="./img/arrow.png" class="arrowHead"></p>
+            </button>
+    </div>
+    <div class="game hide">
+        <div class="con">
+            <div class="top">
+                <div class="time">60s</div>
+                <label class="scoreCount">0 pt</label>
+				<div class="right">
+					<label class="targetName">Target</label>
+					<label class="targetLabel">20 pt</label>
+				</div>
+            </div>
+        </div>
+        <div class="game-container">
+            <div class="end-line"></div>
+            <div class="bin"></div>
+        </div>
+    </div>
+    <div class="popUp hide">
+        <div class="pop">
+            <button class="close">&times</button>
+            <div class="information"></div>
+        </div>
+    </div>
+    <div class="final hide">
+        <div class="final-title">
+            <img class="title-final" src="./img/title.png">
+        </div>
+        <div class="icon"></div>
+        <div class="text">
+            <img class="logo" src="./img/logo.png">
+            <p>BCA Green Mark helped reduce whole life carbon through the building’s lifecycle, resilient 
+                to the effects of climate change, and Improve the health and wellbeing of its occupants</p>
+        </div>
+        <a class="More" href= "https://www.globalgoals.org/goals/11-sustainable-cities-and-communities/">
+            <p class="Moretext">Find out how to 
+                <br>get green mark</p>
+            <img src="./img/arrow.png" class="arrowHead">`
+        </a>
+        <button class="restart">
+                <img src="./img/white.png">
+                <p>RESTART</p>
+            </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

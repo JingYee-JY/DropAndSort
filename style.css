@@ -1,0 +1,557 @@
+.instruction::-webkit-scrollbar {
+    width: 5px;
+}
+   
+.instruction::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+.instruction::-webkit-scrollbar-thumb {
+    background-color: #747474;
+    outline: 1px solid #747474;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./img/background.png");
+    position: fixed;
+    overflow: hidden;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.start, .game, .howToPlay, .final{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.final{
+    align-items: center;
+}
+
+.game-title{
+    margin-top: 10%;
+    align-self: center;
+    width: 40%;
+}
+
+.title{
+    width: 100%;
+    box-sizing: content-box;
+}
+
+.preview{
+    width: 97%;
+    margin: 5% auto;
+    padding: 1%;
+}
+
+.startButton, .startGame, .submit{
+    width: 80%;
+    margin: 0% auto;
+    background-color: #7CB254;
+    border: 0px;
+    border-radius: 10px;
+    padding: 2.5%;
+    margin-bottom: 10%;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.startGame {
+    margin-top: 40px;
+}
+
+.startButton p, .startGame p, .nextButton p, .submit p {
+    margin: 3%;
+    margin-right: 6%;
+}
+
+.arrowHead{
+    margin-left: 10px;
+    max-width: 35px;
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+.instruction{
+    border: 2px solid #747474;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding:0 20px;
+    box-sizing: border-box;
+    font-size: 19px;
+    text-align: left;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+h1{
+    font-size: 26px;
+    color: #474747;
+    margin-top: 30px;
+}
+
+hr{
+    width: 90%;
+    background-color: #474747;
+    border: 2px solid #474747;
+    margin-bottom: 0%;
+}
+
+.example{
+    display: flex;
+    flex-direction: row;
+}
+.object, .help{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.object img{
+    width: 100%;
+}
+
+.small{
+    width: 30% !important;
+}
+
+.help img{
+    width: 30%;
+    margin-bottom: 10%;
+}
+
+.con{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+	padding: 10px;
+    margin-top: 10%;
+    z-index: 3;
+    font-weight: 900;
+}
+
+.game-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.end-line{
+    width: 10%;
+    height: 15px;
+    position: absolute;
+    background-color: #474747;
+    bottom: -15px;
+}
+
+.bin{
+    width: 200px;
+    height: 150px;
+    background-image: url("./img/Bin.png");
+    z-index: 5;
+    background-position:bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0px;
+    left: -25px;
+}
+
+.top{
+	position: relative;
+	display: flex;
+	background-color: #7CB254;
+	border-radius: 20px;
+	font-size: 20px;
+	width: 100%;
+	justify-content: space-between;
+	height: auto;
+	padding: 2.5%;
+}
+
+.time{
+	position: absolute;
+    top: -20%;
+    right: 40%;
+    background-color: #474747;
+    border-radius: 10px;
+    color: white;
+    height: 140%;
+    width: 20%;
+    display: flex;
+    z-index: 5;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.right{
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+}
+
+.targetLabel  {
+	color: white;
+	margin:0 !important;
+}
+
+.targetName{
+	color: white;
+	font-size: 14px;
+	top: 0%;
+	margin: 0%;
+}
+
+.scoreCount{
+	color: white;
+	align-self: center;
+	margin: 0 !important;
+}
+
+.aluminium{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/aluminium.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.bamboo{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/bamboo.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.brick{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/brick.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.concrete{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/concrete.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.cork{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/cork.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.lead{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/lead.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.paper{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/paper.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.plastic{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/plastic.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.steel{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/steel.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+.steel1{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/steel1.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.wood{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    background-image: url("./img/wood.png");
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.popUp{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    gap: 5vh;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    top: 0;
+    background-color: rgba(50, 50, 50,0.6);
+}
+
+.pop{
+    background-color: white;
+    position: relative;
+    width: 90%;
+    height: 50%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+
+.information{
+    width: 80%;
+    position: relative;
+    height: 70%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information img{
+    margin-top: 2.5%;
+    width: 50%;
+}
+
+.information h1{
+    font-weight: 900;
+    font-size: 18px;
+    margin: 2.5% auto;
+    margin: 0%;
+}
+
+.information p {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin: 0%;
+    text-align: center;
+}
+
+.close{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    padding: 0% 2.7%;
+    background-color: red;
+    font-weight: 900;
+    color: white;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.More{
+    width: 80%;
+    border: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+	color: #60A478;
+    padding: 2.5%;
+    text-decoration: none;
+}
+
+.Moretext{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+}
+
+.More p{
+    margin: auto 1.5%;
+    line-height: normal;
+    text-align: left;
+}
+
+.More:hover {
+    text-decoration: none;
+    color: #60A478;
+}
+
+.More img {
+    position: relative;
+    max-width: 35px;
+}
+
+.restart{
+	width: 70%;
+	position: relative;
+	background-color: transparent;
+	border: 0px;
+	color: white;
+	font-size: 20px;
+	margin: 0% auto;
+	font-weight: 600;
+}
+
+.final-title{
+	margin-top: 10%;
+    align-self: center;
+    width: 150px;
+	margin-bottom: 0%;
+}
+
+.title-final{
+	position: relative;
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.icon{
+    width: 200px;
+	height: 110px;
+	margin-top: 10px;
+    color: white;
+}
+
+.icon p{
+    font-size: 40px;
+    font-weight: 1000;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.tick{
+	width: 20% !important;
+}
+
+.icon img{
+	width: 20%;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.text{
+    background-color: #2A2C5C;
+    position: relative;
+	width: 80%;
+    height: 200px;
+    margin-bottom: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    line-height: normal;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  .text p , .text h2{
+	margin: 5% 2.5%;
+	color: white;
+  }
+
+  .text img{
+    position: absolute;
+    width: 20%;
+    height: auto;
+    align-self: center;
+    top: 2%;
+  }
+
+  .restart img{
+    position: absolute;
+	width: 5%;
+	top: 35%;
+	left: 25%;
+  }

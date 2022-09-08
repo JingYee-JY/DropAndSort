@@ -25,7 +25,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.start, .game, .howToPlay, .final{
+.start, .game, .howToPlay, .final, .game-container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -34,6 +34,10 @@ body{
     height: auto;
     text-align: center;
     min-height: 100vh;
+}
+
+.game{
+    position: relative;
 }
 
 .final{
@@ -52,34 +56,45 @@ body{
 }
 
 .preview{
-    width: 97%;
+    width: 100%;
     margin: 5% auto;
     padding: 1%;
 }
 
 .startButton, .startGame, .submit{
-    width: 80%;
-    margin: 0% auto;
+    width: 100%;
+    position: relative;
+    align-self: center;
     background-color: #7CB254;
     border: 0px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
     border-radius: 10px;
-    padding: 2.5%;
+    padding: 5% 5%;
     margin-bottom: 10%;
     color: white;
     font-weight: 700;
     font-size: 25px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
 }
 
 .startGame {
     margin-top: 40px;
 }
 
-.startButton p, .startGame p, .nextButton p, .submit p {
+.startButton p, .startGame p, .submit p {
     margin: 3%;
     margin-right: 6%;
+}
+
+.words{
+    font-size: 20px;
+    width: 100%;
+    margin: 0 !important;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 600;
 }
 
 .arrowHead{
@@ -525,7 +540,7 @@ hr{
     position: relative;
 	width: 80%;
     height: 200px;
-    margin-bottom: 5%;
+    margin-bottom: 2.5%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -534,24 +549,161 @@ hr{
     border-radius: 10px;
     font-size: 17px;
     padding: 15px;
-  }
+}
 
-  .text p , .text h2{
+.text p , .text h2{
 	margin: 5% 2.5%;
 	color: white;
-  }
+}
 
-  .text img{
+.text img{
     position: absolute;
     width: 20%;
     height: auto;
     align-self: center;
     top: 2%;
-  }
+}
 
-  .restart img{
+.restart img{
     position: absolute;
 	width: 5%;
 	top: 35%;
 	left: 25%;
-  }
+}
+  /*mobile*/
+@media screen and (max-width: 767px){
+    .startButton, .startGame {
+    width: calc(100% - 80px);
+    justify-content: center;
+    align-items: center;
+    }
+}
+
+/*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    body{
+      width: 100%;
+    }
+    .start, .howToPlay, .game,.final{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .start,.game,.final{
+      left: 0;
+      right: 0;
+    }
+    .con p{
+        font-size: 30px;
+        margin-bottom: 0%;
+    }
+    .howToPlay, .final{
+        justify-content: center;
+    }
+    .bin{
+        left: 5px;
+        bottom: -13px;
+        width: 225px;
+        height: 300px;
+    }
+    .close{
+        padding: 1% 3%;
+        border-radius: 50px;
+        font-size: 40px;
+    }
+    .preview{
+        margin-top: 20%;
+        margin-left: -25%;
+        width: 150%;
+    }
+    .words{
+      width: 90%;
+    }
+    .instruction{
+        max-height: 80vh;
+    }
+    .instruction::-webkit-scrollbar {
+        width: 0px;
+    }
+    .instruction::-webkit-scrollbar-track {
+        box-shadow: 0px;
+    }
+    .instruction::-webkit-scrollbar-thumb {
+        background-color: none;
+        outline: 0px;
+    }
+    .startButton, .startGame, .nextButton{
+        max-width: 250px;
+    }
+    .pop{
+        max-width: 550px;
+        max-height: 400px;
+    }
+    .text img{
+        top: 5%;
+        max-width: 80px;
+    }
+}
+
+
+/*desktop*/
+@media screen and (min-width:1200px){
+    body{
+      width: 100%;
+    }
+    .start, .howToPlay,.game,.final{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .con p{
+        margin-top: 3%;
+        margin-bottom: 0%;
+    }
+    .con{
+        margin-top: 1%;
+        margin-bottom: 0%;
+        padding-bottom: 1%;
+    }
+    .start, .final, .game{
+      left: 0;
+      right: 0;
+    }
+    .instruction{
+        max-height: 60vh;
+    }
+    .icon{
+        height: 95px;
+    }
+    .final-title img{
+        padding-bottom: 2.5%;
+    }
+    .icon p{
+        margin-bottom: 10px;
+    }
+    .pop{
+        max-width: 350px;
+    }
+    .pop img{
+        max-width: 130px;
+    }
+    .information p{
+        font-size: 13px;
+    }
+    .information h1{
+        font-weight: 900;
+        font-size: 15px;
+        margin: 2.5% auto;
+        margin: 0%;
+    }
+    .startButton, .startGame{
+        max-width: 250px;
+    }
+    .final-title{
+        margin-top: 0%;
+    }
+    .restart {
+        margin: 0px;
+    }
+    .restart p{
+        margin: 15px;
+    }
+}

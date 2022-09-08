@@ -11,6 +11,7 @@ const popUp = document.querySelector(".popUp");
 const information = document.querySelector(".information");
 const close = document.querySelector(".close");
 const final = document.querySelector(".final");
+const finalTitle = document.querySelector(".title-final");
 const icon = document.querySelector(".icon");
 const text = document.querySelector(".text");
 const more = document.querySelector(".More");
@@ -167,6 +168,11 @@ function moveObject(){
             spawnObject();
         }
         if(item.classList.contains("move")){
+            if(item.y >(border.height - 250)){
+                if(item.x < 130 && item.x > 100){
+                    item.classList.remove("move")
+                }
+            }
             if(item.x < 10){
                 item.classList.remove("move")
             }
@@ -175,6 +181,7 @@ function moveObject(){
         }
         if(item.y > border.height){
             if(!item.classList.contains("wrong")){
+                startGame = false
                 if(item.classList.contains("aluminium")){
                     information.innerHTML =`
                     <img src="${sustainable[0].image}">
@@ -223,11 +230,12 @@ function moveObject(){
                     <h1>Good Try!</h1>
                     <p>${sustainable[7].info}</p>`
                 }
+                popUp.classList.remove("hide")
             }
             gameContainer.removeChild(item);
         }
         if(item.y > (border.height - 150) && item.y < border.height && 
-        item.x > 0 && item.x < 150){
+        item.x > 0 && item.x < 100){
             if(!item.classList.contains("wrong")){
                 score += 2
                 gameContainer.removeChild(item);
@@ -314,6 +322,7 @@ function updateScore(){
                 more.style.backgroundColor = "#7CB254"
                 more.style.color = "white"
                 restart.style.color = "black"
+                finalTitle.src = "./img/title.png"
                 icon.innerHTML = `
                 <img src="./img/awesome.png">
                 <p>Awesome!</p>`;
@@ -347,9 +356,14 @@ function updateCountDown(){
             more.style.backgroundColor = "white"
             more.style.color = "#474747"
             restart.style.color = "black"
+            finalTitle.src = "./img/lose.png"
             icon.innerHTML = `
             <img src="./img/timeout.png">
             <p>Timeout</p>`;
+            more.innerHTML =`            
+            <p class="Moretext">Find out how to 
+            <br>get green mark</p>
+            <img src="./img/black-arrow.png" class="arrowHead">`
             restart.innerHTML = `
             <img src="./img/black.png">
             <p>RESTART</p>`

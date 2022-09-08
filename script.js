@@ -23,7 +23,7 @@ let scoreinterval
 let timeinterval
 
 let startGame = false;
-let player = {step: 1.5}
+let player = {step: 2}
 let time;
 let right;
 let score;

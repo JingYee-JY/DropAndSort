@@ -104,7 +104,7 @@ function spawnObject(){
         object.x = 25
     }
     else{
-        object.x = border.width - 200
+        object.x = border.width - 150
     }
     object.style.left = object.x + 'px';
     gameContainer.appendChild(object);

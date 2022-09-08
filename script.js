@@ -75,9 +75,10 @@ restart.addEventListener("click", () => {
 function began(){
     game.classList.remove("hide")
     body.style.backgroundColor = ""
+    body.style.backgroundImage = `url("./img/background.png")`
     startGame = true
     score = 0
-    time = 60
+    time = 45
     movingLeft = false
     movingRight = false
     spawnOnce = false
@@ -100,7 +101,7 @@ function spawnObject(){
     object.style.top = object.y + 'px';
     let random = Math.floor(Math.random() * 2)
     if(random == 0){
-        object.x = 0
+        object.x = 25
     }
     else{
         object.x = border.width - 200
@@ -372,6 +373,7 @@ function updateCountDown(){
             remove()
             game.classList.add("hide")
             final.classList.remove("hide")
+            body.style.backgroundImage = "none"
             body.style.backgroundColor = "#474747"
             final.style.backgroundColor = "#474747"
             icon.style.color = "white"
@@ -379,7 +381,7 @@ function updateCountDown(){
             text.style.color = "white"
             more.style.backgroundColor = "white"
             more.style.color = "#474747"
-            restart.style.color = "black"
+            restart.style.color = "white"
             finalTitle.src = "./img/lose.png"
             icon.innerHTML = `
             <img src="./img/timeout.png">
@@ -389,7 +391,7 @@ function updateCountDown(){
             <br>get green mark</p>
             <img src="./img/black-arrow.png" class="arrowHead">`
             restart.innerHTML = `
-            <img src="./img/black.png">
+            <img src="./img/white.png">
             <p>RESTART</p>`
             clearInterval(scoreinterval);
             clearInterval(timeinterval);
